@@ -3,6 +3,9 @@ FROM node:7-onbuild
 
 # set maintainer
 LABEL maintainer "academy@release.works"
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN npm install && npm start
 
 # set a health check
 HEALTHCHECK --interval=5s \
